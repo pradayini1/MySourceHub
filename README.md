@@ -81,3 +81,21 @@ if [ $i -ge 500 -a $i -le 10000 ]
 	done
 	echo "Total count of user ID between 500 to 10000 is: $count"
          fi
+------------------------------------------------------------------------------------------------------------------
+31
+
+#!/bin/bash
+
+filesys=(`df | tr -s " " | cut -d " " -f1`)
+for j in ${filesys[@]}
+do
+        echo "$j"
+done
+useper=(`df | tr -s " " | cut -d " " -f5 | cut -d "%" -f1`)
+for i in `seq $((${#useper[@]}-1))`
+do
+        if [ ${useper[i]} -ge 90 ]
+        then
+echo "Filesystem ${filesys[i]} have less than 10% free space"
+fi
+done
