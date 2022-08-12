@@ -99,3 +99,29 @@ do
 echo "Filesystem ${filesys[i]} have less than 10% free space"
 fi
 done
+
+-----------------------------------------------------------------------------------------------------------
+24
+
+if [ $# -eq 1 ]  
+then
+	if [ -d $1 ]  
+	then
+		swps=(`find $1 -name "*.swp" -type f`)  
+		if [ ${#swps[@]} -ne 0 ]  
+		then
+			find $1 -name "*.swp" -type f -delete   
+		else
+			echo "No swp files found in test_swp."
+		fi
+	else
+		echo "Error : '$1' no such a file or directory"
+	fi
+else
+	swps=(`find ~ -name "*.swp" -type f`)  
+	if [ ${#swps[@]} -ne 0 ]  
+	then
+		echo "swap file found :"
+		find ~ -name "*.swp" -type f  
+	fi
+fi
