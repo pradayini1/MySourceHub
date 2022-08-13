@@ -200,7 +200,17 @@ Ass
 Bih
 Chh
 -------------------------------------------------------------25
-randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;}
---------------------------------------------------------------------
 
-openssl rand -base64 14
+openssl rand -base64 14-----25
+------------------------------------------------------------------26
+
+# !/bin/bash
+echo "enter directory name"
+read dir
+if[ -d $dir]
+then
+echo "list of files in the directory"
+ls –l $dir|egrep ‘^d’
+else
+echo "enter proper directory name"
+fi
