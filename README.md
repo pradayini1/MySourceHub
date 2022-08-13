@@ -125,38 +125,31 @@ else
 		find ~ -name "*.swp" -type f  
 	fi
 fi
-----------------------------------------------------------------
+----------------------------------------------------------------2
 
-# Program to print the
-# given pattern
- 
-# Static input for N
-N=5
- 
-# variable used for
-# while loop
-i=0
-j=0
- 
-while [ $i -le `expr $N - 1` ]
+v_num=1
+v_rows=5
+for((i=1; i<=$v_rows; i++))
 do
-    j=0
-     
-    while [ $j -le `expr $N - 1` ]
-    do
-        if [ `expr $N - 1` -le `expr $i + $j` ]
-        then
-          # Print the pattern
-          echo -ne "#"
-        else
-          # Print the spaces required
-          echo -ne " "
-        fi
-        j=`expr $j + 1`
-    done
-    # For next line
-    echo
-              
-    i=`expr $i + 1`
+  for((j=1; j<=$i; j++))
+  do
+    echo -n "$v_num "
+    v_num=$((v_num + 1))
+  done
+  v_num=1
+  echo
+done
+
+------------------------------------------------3
+v_num=1
+v_rows=4
+for((i=1; i<=$v_rows; i++))
+do
+  for((j=1; j<=$i; j++))
+  do
+    echo -n "$v_num "
+    v_num=$((v_num + 1))
+  done
+  echo
 done
 
