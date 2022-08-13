@@ -125,3 +125,15 @@ else
 		find ~ -name "*.swp" -type f  
 	fi
 fi
+----------------------------------------------------------------
+
+for i in 1 2 3 4 5
+do
+j=0;
+while [ $j -lt i ]
+do
+echo "* \c"
+j=$(( j + 1 ))
+done
+echo ""
+done
