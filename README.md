@@ -174,3 +174,28 @@ read e
 
 //printing the specified lines to console.
 sed -n $s,$e\p $f
+------------------------------------------------23
+
+-------------------------------------------------------23
+$ cut -f 1 state.txt
+Andhra Pradesh
+Arunachal Pradesh
+Assam
+Bihar
+Chhattisgarh
+If -d option is used then it considered space as a field separator or delimiter:
+
+$ cut -d " " -f 1 state.txt
+Andhra
+Arunachal
+Assam
+Bihar
+Chhattisgarh
+
+In this, -3 indicate from 1st byte to 3rd byte of a line
+$ cut -b -3 state.txt
+And
+Aru
+Ass
+Bih
+Chh
