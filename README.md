@@ -153,3 +153,24 @@ do
   echo
 done
 
+--------------------------------------------------------20
+//Shell script to display all the 
+//given lines of a file
+
+//take file name from user
+//and store the input in f variable
+echo "Enter the file name :"
+read f
+
+//take starting line from user 
+//and store the input in s variable
+echo "Enter the starting line :"
+read s 
+
+//take endinging line from user 
+//and store the input in e variable
+echo "Enter the ending line :"
+read e
+
+//printing the specified lines to console.
+sed -n $s,$e\p $f
