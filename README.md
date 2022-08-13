@@ -206,11 +206,22 @@ openssl rand -base64 14-----25
 
 # !/bin/bash
 echo "enter directory name"
-read dir
+read dir.
 if[ -d $dir]
-then
+then.
 echo "list of files in the directory"
 ls –l $dir|egrep ‘^d’
-else
+else.
 echo "enter proper directory name"
-fi
+fi.
+-------------------------------------------------------------------
+$ cat t.sh
+#!/bin/bash
+
+for file in "${1-.}"/*; do
+        [ -d "${file}" ] && ((directories++))
+        [ -f "${file}" ] && ((files++))
+done
+
+echo "Number of files: ${files-0}"
+echo "Number of directories: ${directories-0}"
